@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.form_div {
+	margin-left: 10%;	
+}
+
+th, td {
+	padding: 10px;
+}

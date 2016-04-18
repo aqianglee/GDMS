@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+.textFiled {
+	width: 350px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+.testArea {
+	width: 340px;
+	height: 120px;
+	line-height: 25px;
+	padding: 10px;
+}
+
+.submit {
+	width: 350px;
+	height: 50px;
+	background-color: #BBB;
+}
+
+.errorInfo{
+	color: red;
+	font-weight: bold;
+}

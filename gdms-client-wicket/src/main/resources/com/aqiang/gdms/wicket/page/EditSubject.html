@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+				<link rel="stylesheet" type="text/css" href="EditSubject.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div align="center" class="subject_area">
+				<div wicket:id="errors"></div>
+				<form wicket:id="form">
+					<div style="margin: 10px;">
+						<select style="width: 310px; height: 40px;" wicket:id="subjectApplyType">
+							<option>请选择...</option>
+							<option>学校题目</option>
+							<option>自拟题目</option>
+							<option>公司题目</option>
+							<option>硕导题目</option>
+						</select>
+						<select style="width: 310px; height: 40px;" wicket:id="subjectSource">
+							<option>请选择...</option>
+							<option>科研</option>
+							<option>生产</option>
+							<option>教学</option>
+							<option>其他</option>
+						</select>
+						<select style="width: 310px; height: 40px;" wicket:id="subjectType">
+							<option>请选择...</option>
+							<option>设计</option>
+							<option>论文</option>
+						</select>
+					</div>
+					<div class="panel panel-default" style="padding: 100px 30px; margin: 10px; width: 960px">
+						<div align="left">
+							<h3>附件1</h3>
+						</div>
+						<h2>青海大学本科生毕业论文（设计）选题方向审批表</h2>
+						<table id="t1">
+							<tr>
+								<td width="50%" id="d1">院、系(部): 
+									<input type="text" wicket:id="college.collegeName">
+								</td>
+								<td width="50%" id="d2">教研室: 
+									<select style="width: 290px;" wicket:id="teachAndResearchOffice">
+										<option>请选择...</option>
+										<option>计算机系教研室</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						<br>
+						<table id="t2" border="1" cellspacing="0">
+							<tr height="80px;">
+								<td class="c1" align="center">选题方向</td>
+								<td colspan="7" align="center">
+									<input type="text" style="width: 550px; line-height: 200%" wicket:id="topicChoosingWay">
+								</td>
+							</tr>
+
+							<tr height="50px">
+								<td class="c1" align="center">指导教师及职称</td>
+								<td width="80px">
+									<input type="text" style="width: 130px;" wicket:id="don">
+								</td>
+								<td width="70px" align="center">职 称</td>
+								<td id="don_job">
+									<select style="width: 70px;" wicket:id="donJob">
+										<option>请选择...</option>
+										<option>助教</option>
+										<option>讲师</option>
+										<option>副教授</option>
+										<option>教授</option>
+									</select>
+								</td>
+								<td align="center">辅导教师</td>
+								<td><input type="text" style="width: 60px;"
+									wicket:id="tutorName"></td>
+								<td width="70px" align="center">职 称</td>
+								<td width="60px">
+									<select style="width: 70px;" wicket:id="tutorJob">
+										<option>请选择...</option>
+										<option>助教</option>
+										<option>讲师</option>
+										<option>副教授</option>
+										<option>教授</option>
+									</select>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="c1" align="center">设计起止时间</td>
+								<td>
+									<input type="text" class="time_field" wicket:id="beginTime"> <br> 
+									<input type="text" class="time_field" wicket:id="endTime">
+								</td>
+								<td align="center">指导班级</td>
+								<td colspan="2">
+									<select style="width: 140px;" wicket:id="specialty">
+										<option>请选择...</option>
+										<option>计算机科学与技术2012级</option>
+									</select>
+								</td>
+								<td align="center">指导人数</td>
+								<td colspan="2"><input type="text" style="width: 100px;"
+									wicket:id="guideNumber"></td>
+							</tr>
+							<tr height="200px">
+								<td class="c1" align="center">论文（设计）题目的来源和理论依据</td>
+								<td colspan="7" align="center" valign="middle">
+									<textarea class="textArea" wicket:id="taskFromAndTheoryBasis"></textarea>
+								</td>
+							</tr>
+							<tr height="200px">
+								<td class="c1" align="center">主要的论文（设计）内容（含现有基础设施情况）</td>
+								<td colspan="7" align="center" valign="middle">
+									<textarea class="textArea" wicket:id="content"></textarea>
+								</td>
+							</tr>
+							<tr height="200px">
+								<td class="c1" align="center">论文（设计）工作量及学生工作分工</td>
+								<td colspan="7" align="center" valign="middle">
+									<textarea class="textArea" wicket:id="workload"></textarea>
+								</td>
+							</tr>
+							<tr height="100px">
+								<td class="c1" align="center">论文（设计）过程经费预算</td>
+								<td colspan="7" align="center" valign="middle">
+									<textarea class="textArea" wicket:id="budget"></textarea>
+								</td>
+							</tr>
+							<tr height="100px">
+								<td class="c1" align="center">教研室审批意见</td>
+								<td colspan="7" align="center" valign="middle">
+									<textarea class="textArea" wicket:id="teachAndResearchOfficeComment"></textarea>
+								</td>
+							</tr>
+							<tr height="100px">
+								<td class="c1" align="center">系（部）学术委员会或教学指导委员会审批意见</td>
+								<td colspan="7" align="center" valign="middle">
+									<textarea class="textArea" wicket:id="collegeComment"></textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+				<div align="right" style="padding: 10px 0px; width: 960px;">
+					<a href="#" class="btn btn-primary" wicket:id="submit">提交</a>
+				</div>
+			</div>
+			<div class="modal fade" id="notice" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">系统提示</h4>
+						</div>
+						<div class="modal-body">后台正在处理文档生成，请稍后...</div>
+						<div class="modal-footer"></div>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+</body>
+</html>

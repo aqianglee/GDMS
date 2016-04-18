@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+.personInfo {
+	
+	width: 600px;
+	padding: 20px;
+	margin: 30px auto;
+}
+
+.beseInfo, .email, .questionAndAnswer {
+	margin: 30px auto;
+	background: #f8f8f8;
+	padding: 30px;
+	border-radius:10px;
+}
+
+.modefy_baseInfol_link {
+	width: 300px;
+	margin: 30px auto;
+	background: #DDD;
+	line-height: 40px;
+	color: blue;
+	cursor: pointer;	/*使鼠标变成小手 */
+}

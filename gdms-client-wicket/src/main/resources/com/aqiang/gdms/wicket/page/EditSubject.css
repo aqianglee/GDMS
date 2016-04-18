@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+.subject_area {
+	width: 960px;
+	margin: 30px auto;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 17px;
+	margin-bottom: 31px;
+}
+
+#t1 {
+	width: 800px;
+	font-size: 20px;
+	margin: 0px auto;
+}
+
+#t2 {
+	width: 800px;
+	margin: 0px auto;
+}
+
+.c1 {
+	width: 140px;
+}
+
+.college,.teachAndResearchOffice {
+	width: 240px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.specialty {
+	width: 140px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.topicChoosingWay {
+	margin: 10px;
+	width: 600px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.don,.tutor {
+	width: 70px;
+	height: 35px;
+	margin: 10px;
+	line-height: 35px;
+}
+
+.job {
+	width: 55px;
+	height: 35px;
+	margin: 10px;
+	line-height: 35px;
+}
+
+.guideNumber {
+	width: 90px;
+	height: 35px;
+	margin: 10px;
+	line-height: 35px;
+}
+
+.textArea {
+	width: 100%;
+	height: 100%;
+}
+
+.time_field {
+	width: 130px;
+}

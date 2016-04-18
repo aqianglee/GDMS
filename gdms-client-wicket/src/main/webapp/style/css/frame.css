@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+/*
+标题样式
+*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+	height: 50px;
+	background-color: navy;
+}
+
+.title {
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	font-size: 24px;
+	float: left;
+}
+
+.shopKeeperInfo_messages {
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	float: right;
+}
+
+.userInfo{
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	float: right;
+	padding: 0px 10px;
+	margin: 0px 1px;
+	cursor: pointer;	/*使鼠标变成小手 */
+	background-color: maroon;
+}
+
+.message {
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	float: right;
+	padding: 0px 10px;
+	margin: 0px 1px;
+	cursor: pointer;	/*使鼠标变成小手 */
+	background-color: maroon;
+}
+
+/*
+体部样式
+*/
+.context {
+	min-height: 570px;
+}
+/*
+菜单样式
+*/
+.menu {
+	width: 15.2%;
+	min-height: 570px;
+	float: left;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;	/*文字下划线 */
+}
+
+.menu_class_1 {
+	width: 200px;
+	height: 50px;
+	background-color: #DDD;
+	line-height: 50px;
+	cursor: pointer;	/*使鼠标变成小手 */
+	border: 1px solid #bbb;
+}
+
+.menu_class_2 {
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	background-color:#FAFAFA;
+	cursor: pointer;	/*使鼠标变成小手 */
+	border: 1px solid #DDD;
+}
+
+/*
+有边页面
+*/
+.right {
+	width: 82.5%;
+	min-height: 570px;
+	float: left;
+}
+
+.right_title {
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.nav {
+	padding: 10px;
+}
+
+/*
+页底样式
+*/
+footer {
+	height: 50px;
+}
+
+.pageButtom {
+	font-size: 15px;
+	line-height: 50px;
+	color: #666;
+}

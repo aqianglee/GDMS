@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.body {
+	margin: 0px auto;
+	padding-top: 290px;
+	width: 1002px;
+	height: 400px;
+	background-image: url(../images/background2.png);
+}
+
+.content {
+	margin: 0px auto;
+	width: 280px;
+	height: 60px;
+	font: blod;
+	padding-left: 110px;
+	font-family: 楷体;
+}
+
+td{
+	padding: 3px;
+	line-height: 20px;
+}
+
+.textField {
+	height: 20px;
+	width: 170px;
+}
+
+.submit {
+	width: 60px;
+	height: 20px;
+}

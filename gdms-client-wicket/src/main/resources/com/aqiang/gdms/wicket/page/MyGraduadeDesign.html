@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>毕业设计管理系统 0.0.8</title>
+<wicket:head>
+	<wicket:link>
+		<link rel="stylesheet" type="text/css" href="BorderPage.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	</wicket:link>
+</wicket:head>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages">
+			<a class="btn btn-primary" type="button" wicket:id="showMessage">
+				Messages <span class="badge" wicket:id="messageCount">4</span>
+			</a> <a class="btn btn-primary" type="button" wicket:id="logout">退出</a>
+		</div>
+		<div style="clear: both;"></div>
+	</header>
+	<div class="content">
+		<wicket:child>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返
+					回</a>
+			</div>
+			<div class="panel panel-default"
+				style="padding: 50px; margin: 10px auto; width: 800px;"
+				align="center">
+				<h2>我的课题组</h2>
+				<br>
+				<div wicket:id="myGraduadeDesign" style="width: 500px;">
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">我的课题：</label>
+						<span class="form-control" wicket:id="subject.topicChoosingWay">基于敏捷开发的校园超市系统</span>
+					</div>
+					<br>
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">指导教师：</label>
+						<span class="form-control">
+							<a href="#" id="teacher">
+								<span wicket:id="teacher.compellation">曹腾飞</span>
+							</a> 
+						</span>
+					</div>
+					<br>
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">辅导教师：</label>
+						<span class="form-control" wicket:id="subject.tutorName">无</span>
+					</div>
+					<br>
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生：</label>
+						<span class="form-control">
+							<span wicket:id="students">
+								<a href="#" class="student" wicket:id="student">
+									<span wicket:id="compellation"> 李志强 </span>
+								</a>
+							</span>
+							<wicket:remove>
+								<span>
+									<a href="#" class="student">
+										<span> 杨静波 </span>
+									</a>
+								</span>
+							</wicket:remove>
+						</span>
+					</div>
+					<br>
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">&nbsp;任&nbsp;务&nbsp;书：</label>
+						<span class="form-control"> 
+							<a href="EditTask.html" wicket:id="addNewTask">填写</a>
+							<a href="EditTask.html" wicket:id="editTask">修改</a> 
+							<a href="#" wicket:id="showTask">查看详情</a> 
+							<a href="#" wicket:id="downloadTask">下载</a>
+						</span>
+					</div>
+					<br>
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">开题报告：</label>
+						<span class="form-control"> 
+							<a href="#" class="upload" wicket:id="uploadOpeningReport">上传</a>
+							<a href="#" class="upload" wicket:id="changeOpeningReport">更改</a> 
+							<a href="#" wicket:id="downloadOpeningReport">下载</a>
+						</span>
+					</div>
+					<br>
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">毕业论文：</label>
+						<span class="form-control"> 
+							<a href="#" class="upload" wicket:id="uploadDissertation">上传</a>
+							<a href="#" class="upload" wicket:id="changeDissertation">更改</a> 
+							<a href="#" wicket:id="downloadDissertation">下载</a>
+						</span>
+					</div>
+					<br>
+					<div class="input-group input-group-lg">
+						<label class="input-group-addon" id="sizing-addon1">每周汇报：</label>
+						<span class="form-control"> 
+							<a href="ManageSchedule.html" wicket:id="manageSchedule">每周汇报</a>
+							<span wicket:id="studentsManageSchedule">
+								<a href="ManageSchedule.html" wicket:id="student">
+									<span wicket:id="compellation"> 李志强 </span>
+								</a>
+							</span>
+							<wicket:remove>
+								<span>
+									<a href="ManageSchedule.html">
+										<span> 杨静波 </span>
+									</a>
+								</span>
+							</wicket:remove>
+						</span>
+					</div>
+					<br>
+				</div>
+			</div>
+			<div class="modal fade" id="teacherDetails" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">教师详情</h4>
+						</div>
+						<div class="modal-body" align="center">
+							<h2>个人信息</h2>
+							<br>
+							<div wicket:id="teacherDetails" style="width: 300px;">
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+									<span class="form-control" wicket:id="compellation">曹腾飞</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</label>
+									<span class="form-control" wicket:id="gender">男</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</label>
+									<span class="form-control" wicket:id="job">助教</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</label>
+									<span class="form-control" wicket:id="phone">12345678900</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+									<span class="form-control" wicket:id="email">12345@edu.cn</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">研究领域</label>
+									<span class="form-control" wicket:id="researchArea">软件工程</span>
+								</div>
+								<br>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button id="closeTeacherDetails" type="button"
+								class="btn btn-default" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="studentDetails" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">学生详情</h4>
+						</div>
+						<div class="modal-body" align="center">
+							<h2>个人信息</h2>
+							<br>
+							<div wicket:id="studentDetails" style="width: 300px;">
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+									<span class="form-control" wicket:id="compellation">李志强</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+									<span class="form-control" wicket:id="number">1200802022</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</label>
+									<span class="form-control" wicket:id="gender">男</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</label>
+									<span class="form-control" wicket:id="phone">12345678900</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+									<span class="form-control" wicket:id="email">12345@edu.cn</span>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">喜欢领域</label>
+									<span class="form-control" wicket:id="likeArea">软件工程</span>
+								</div>
+								<br>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button id="closeStudentDetails" type="button"
+								class="btn btn-default" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="uploadFile" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">上传文件</h4>
+						</div>
+						<div class="modal-body" align="center"></div>
+						<div class="modal-footer">
+							<button id="closeTeacherDetails" type="button"
+								class="btn btn-default" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:child>
+		<script type="text/javascript">
+			$(function() {
+				$("#teacher").click(function() {
+					$("#teacherDetails").modal();
+				});
+
+				$(".student").click(function() {
+					$("#studentDetails").modal();
+				});
+
+				$(".upload").click(function() {
+					$("#uploadFile").modal();
+				});
+			});
+		</script>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+</body>
+</html>

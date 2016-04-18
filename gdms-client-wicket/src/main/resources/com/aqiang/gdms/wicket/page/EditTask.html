@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>毕业设计管理系统 0.0.8</title>
+<wicket:head>
+	<wicket:link>
+		<link rel="stylesheet" type="text/css" href="BorderPage.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	</wicket:link>
+</wicket:head>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages">
+			<a class="btn btn-primary" type="button" wicket:id="showMessage">
+				Messages <span class="badge" wicket:id="messageCount">4</span>
+			</a> 
+			<a class="btn btn-primary" type="button" wicket:id="logout">退出</a>
+		</div>
+		<div style="clear: both;"></div>
+	</header>
+	<div class="content">
+		<wicket:child>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+				<link rel="stylesheet" type="text/css" href="EditTask.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div align="center" class="subject_area">
+				<div wicket:id="errors"></div>
+				<form wicket:id="form">
+					<div class="panel panel-default" style="padding: 100px 30px; margin: 10px; width: 960px">
+						<div align="left">
+							<h3>附件5</h3>
+						</div>
+						<h2>青海大学本科生毕业论文（设计）任务书</h2>
+						<table id="t2" border="1" cellspacing="0">
+							<tr height="60px;">
+								<td class="c1" align="center">学生姓名</td>
+								<td align="center">
+									<input type="text" style="width: 200px; line-height: 200%" wicket:id="student.compellation">
+								</td>
+								<td class="c1" align="center">专业、班级</td>
+								<td align="center">
+									<input type="text" style="width: 200px; line-height: 200%" wicket:id="student.specialty.name">
+								</td>
+							</tr>
+							<tr height="60px;">
+								<td class="c1" align="center">指导老师</td>
+								<td align="center">
+									<input type="text" style="width: 200px; line-height: 200%" wicket:id="teacher.compellation">
+								</td>
+								<td class="c1" align="center">工作单位</td>
+								<td align="center">
+									<input type="text" style="width: 200px; line-height: 200%" wicket:id="company">
+								</td>
+							</tr>
+							<tr height="60px">
+								<td class="c1" align="center">论文（设计）题目</td>
+								<td colspan="3" align="center" valign="middle">
+									<input type="text" style="width: 600px; line-height: 200%" wicket:id="subject.topicChoosingWay">
+								</td>
+							</tr>
+							<tr height="160px" valign="top">
+								<td class="c1" colspan="4">
+									<span>论文（设计）主要内容：</span>
+									<br>
+									<textarea class="mainContent" wicket:id="dissertationMainContent"></textarea>
+								</td>
+							</tr>
+							<tr height="400px" valign="top">
+								<td class="c1" colspan="4">
+									<span>要求完成的主要任务：</span>
+									<br>
+									<textarea class="mainTask" wicket:id="mainTask"></textarea>
+									<div style="margin-left: 450px;">
+										<span>指导教师签名：</span>
+										<br><br>
+										<span>学生签名：</span>
+										<br><br>
+										<span>日期：</span>
+									</div>
+								</td>
+							</tr>
+							<tr height="200px" valign="top">
+								<td class="c1" colspan="4">
+									<span>教研室意见：</span>
+									<br>
+									<textarea class="teachAndResearchOfficeComment" wicket:id="teacherComment"></textarea>
+									<div style="margin-left: 450px;">
+										<span>教研室主任签名：</span>
+										<br><br>
+										<span>日期：</span>
+									</div>
+								</td>
+							</tr>
+							<tr height="150px" valign="top">
+								<td class="c1" colspan="4">
+									<span>系（部）意见：</span>
+									<br>
+									<textarea class="textArea" wicket:id="collegeComment"></textarea>
+									<div style="margin-left: 450px;">
+										<span> 系（部）负责人（盖章） ：</span>
+										<br><br>
+										<span>日期：</span>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+				<div align="right" style="padding: 10px 0px; width: 960px;">
+					<a href="#" class="btn btn-primary" wicket:id="submit">提交</a>
+				</div>
+			</div>
+			<div class="modal fade" id="notice" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">系统提示</h4>
+						</div>
+						<div class="modal-body">后台正在处理文档生成，请稍后...</div>
+						<div class="modal-footer"></div>
+					</div>
+				</div>
+			</div>
+		</wicket:child>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+</body>
+</html>

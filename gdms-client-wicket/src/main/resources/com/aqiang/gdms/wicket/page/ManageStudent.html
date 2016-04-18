@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div class="panel panel-default" style="padding: 30px; margin: 10px;">
+				<div>
+					<div style="float: left;">
+						<h2 style="font-weight: bold;">学生管理</h2>
+					</div>
+					<div style="float: right; margin-top: 20px;">
+						<a href="#" class="btn btn-primary">批量上传</a> 
+						<a href="#" class="btn btn-primary">下载模板</a> 
+						<a href="#" class="btn btn-primary" id="addStudent" wicket:id="addStudent">添加学生</a>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<hr>
+				<table>
+					<thead>
+						<tr>
+							<th>学号</th>
+							<th>学生名称</th>
+							<th width="200">学院名称</th>
+							<th width="200">专业、班级</th>
+							<th>毕业年份</th>
+							<th>编辑</th>
+						</tr>
+					</thead>
+					<tbody wicket:id="studentTab">
+						<tr wicket:id="studentItem">
+							<td wicket:id="number">1200802022</td>
+							<td wicket:id="compellation">李志强</td>
+							<td wicket:id="college.collegeName">计算机技术与应用系</td>
+							<td wicket:id="specialty.name">计算机科学与技术</td>
+							<td wicket:id="event.year">2016</td>
+							<td wicket:id="operators">
+								<a href="#" class="edit" wicket:id="edit">修改</a> 
+								<a href="#" class="delete" wicket:id="delete">删除</a>
+							</td>
+						</tr>
+						<wicket:remove>
+							<tr>
+								<td>1234567890</td>
+								<td>陈大文</td>
+								<td>计算机技术与应用系</td>
+								<td>计算机科学与技术</td>
+								<td>2016</td>
+								<td>
+									<a href="#" class="edit">修改</a> 
+									<a href="#" class="delete">删除</a>
+								</td>
+							</tr>
+						</wicket:remove>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal fade" id="editStudent" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">编辑学生</h4>
+						</div>
+						<div class="modal-body">
+							<div wicket:id="errors"></div>
+							<form class="form-horizontal" wicket:id="editStudent">
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">专业、&nbsp;班级</label>
+									<select type="text" class="form-control" wicket:id="specialty" >
+										<option>请选择</option>
+										<option>软件工程</option>
+										<option>计算机科学与技术</option>
+									</select>
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+									<input type="text" class="form-control" wicket:id="number" />
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">用&nbsp;&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+									<input type="text" class="form-control" wicket:id="username" />
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+									<input type="text" class="form-control" wicket:id="compellation" />
+								</div>
+								<br>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">取消</button>
+							<a type="button" class="btn btn-primary" id="editStudentSubmit"
+								wicket:id="editStudentSubmit">保存</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+	<wicket:remove>
+		<script type="text/javascript">
+			$(function(){
+				$("#addStudent").click(function(){
+					$('#editStudent').modal();
+				});
+				
+				$(".edit").click(function(){
+					$('#editStudent').modal();
+				});
+				
+				$("#editStudentSubmit").click(function(){
+					$('#editStudent').modal('hide');
+				});
+				
+				$(".delete").click(function(){
+					confirm("你确定要删除所选项目吗？")
+				});
+			})
+		</script>
+	</wicket:remove>
+</body>
+</html>

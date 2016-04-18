@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div class="panel panel-default" style="padding: 30px; margin: 10px;">
+				<div>
+					<div style="float: left;">
+						<h2 style="font-weight: bold;">审核课题</h2>
+					</div>
+					<div style="float: right; margin-top: 20px;">
+						<a href="#" class="btn btn-primary" wicket:id="downloadSubjectsSelectGuide">下载报题</a>
+						<a href="#" class="btn btn-primary" id="passAll" wicket:id="passAll">全部通过</a>
+						<a href="#" class="btn btn-primary" id="endSelectSubject" wicket:id="endSelectSubject">结束选题</a>
+						<a href="#" class="btn btn-primary" wicket:id="downloadSubjectsSelectSummary">下载汇总表</a>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<hr>
+				<table>
+					<thead>
+						<tr>
+							<th width="400">选题方向</th>
+							<th>查看详情</th>
+							<th>下载文件</th>
+							<th>报题教师/学生</th>
+							<th>编辑</th>
+							<th>审核</th>
+						</tr>
+					</thead>
+					<tbody wicket:id="subjectTab">
+						<tr wicket:id="subjectItem">
+							<td wicket:id="topicChoosingWay" width="500">信息技术方向-基于敏捷软件开发方法实现的校园生活超市系统</td>
+							<td><a href="#" wicket:id="showDetails">查看详情</a></td>
+							<td><a href="#" wicket:id="downloadFile">下载文件</a></td>
+							<td wicket:id="user.compellation">曹腾飞</td>
+							<td wicket:id="operators">
+								<a href="#" class="edit" wicket:id="edit">修改</a> 
+							</td>
+							<td>
+								<select wicket:id="commented">
+									<option>通过</option>
+									<option>未通过</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+	<wicket:remove>
+		<script type="text/javascript">
+			$(function(){
+				$(".delete").click(function(){
+					confirm("你确定要删除所选项目吗？")
+				});
+				
+				$("#passAll").click(function(){
+					confirm("确定通过所有的课题吗？")
+				});
+				
+				$("#endSelectSubject").click(function(){
+					confirm("确定结束选题吗？结束选题后学生将只能通过申请更换选题更换选题。")
+				});
+			})
+		</script>
+	</wicket:remove>
+</body>
+</html>

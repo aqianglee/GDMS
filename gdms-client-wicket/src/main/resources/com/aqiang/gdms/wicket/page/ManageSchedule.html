@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="MyGraduadeDesign.html" class="btn btn-primary"
+					wicket:id="return">返 回</a>
+			</div>
+			<div class="panel panel-default" style="padding: 30px; margin: 10px;">
+				<div>
+					<div style="float: left;">
+						<h2 style="font-weight: bold;">进度检查表</h2>
+					</div>
+					<div style="float: right; margin-top: 20px;">
+						<a href="#" class="btn btn-primary" id="addScheduleItem"
+							wicket:id="addScheduleItem">新增进度项</a> <a href="#"
+							class="btn btn-primary" wicket:id="downloadSubjectsSchedule">下载进度表</a>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<hr>
+				<table>
+					<thead>
+						<tr>
+							<th>周次</th>
+							<th width="400">毕业设计（论文）工作内容</th>
+							<th>教师检查时间</th>
+							<th>备注</th>
+							<th>附件</th>
+							<th>编辑</th>
+						</tr>
+					</thead>
+					<tbody wicket:id="scheduleItemsTab">
+						<tr wicket:id="scheduleItems">
+							<td wicket:id="week" valign="top">第一周</td>
+							<td wicket:id="content" valign="top">重构项目，搭建基于敏捷开发方式的项目</td>
+							<td wicket:id="checkedTime" valign="top">2016-03-07</td>
+							<td wicket:id="checked" valign="top">通过</td>
+							<td>
+								<div wicket:id="attachments">
+									<a wicket:id="downloadAttachment"> 
+										<span wicket:id="downloadLabel"> 附件一 </span> 
+									</a>
+									&nbsp;
+									<a> 删除 </a>
+								</div>
+								<wicket:remove>
+									<div wicket:id="attachments">
+										<a> 
+											<span> 附件一 </span> 
+										</a>
+										&nbsp;
+										<a> 删除 </a>
+									</div>
+								</wicket:remove>
+							</td>
+							<td wicket:id="editContainer"  valign="top">
+								<a href="#" class="upload" wicket:id="upload">上传附件</a> 
+								<a href="#" class="edit" wicket:id="edit">修改</a> 
+								<select>
+									<option>通过</option>
+									<option>不通过</option>
+								</select>
+								<a href="#" class="delete" wicket:id="delete">删除</a>
+							</td>
+						</tr>
+						<wicket:remove>
+							<tr>
+								<td>第二周</td>
+								<td></td>
+								<td>2016-03-12</td>
+								<td>通过</td>
+								<td>无</td>
+								<td>
+									<a href="#" class="upload">上传附件</a> 
+									<a href="#" class="edit">修改</a> 
+									<select>
+										<option>通过</option>
+										<option>不通过</option>
+									</select>
+									<a href="#" class="delete">删除</a>
+								</td>
+							</tr>
+						</wicket:remove>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal fade" id="addNewScheduleItem" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">新增进度项</h4>
+						</div>
+						<div class="modal-body" align="center">
+							<div wicket:id="editScheduleItemErroes"></div>
+							<form class="form-horizontal" wicket:id="editScheduleItem">
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">院系名称</label>
+									<input type="text" class="form-control" wicket:id="week" />
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">院系简称</label>
+									<input type="text" class="form-control" wicket:id="content" />
+								</div>
+								<br>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button id="closeTeacherDetails" type="button"
+								class="btn btn-default" data-dismiss="modal">关闭</button>
+							<a type="button" class="btn btn-primary"
+								id="editScheduleItemSubmit" wicket:id="editScheduleItemSubmit">保存</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="upload" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">新增进度项</h4>
+						</div>
+						<div class="modal-body" align="center">
+							<div wicket:id="editScheduleItemErroes"></div>
+							<form class="form-horizontal" wicket:id="editScheduleItem">
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</label>
+									<input type="file" class="form-control" wicket:id="attachment" />
+									<span wicket:id="progress">[[upload progressbar]]</span>
+								</div>
+								<br>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button id="closeTeacherDetails" type="button"
+								class="btn btn-default" data-dismiss="modal">关闭</button>
+							<a type="button" class="btn btn-primary"
+								id="editScheduleItemSubmit" wicket:id="editScheduleItemSubmit">上传</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+	<wicket:remove>
+		<script type="text/javascript">
+			$(function() {
+				$(".delete").click(function() {
+					confirm("你确定要删除所选项目吗？")
+				});
+
+				$("#addScheduleItem").click(function() {
+					$("#addNewScheduleItem").modal();
+				})
+
+				$(".edit").click(function() {
+					$("#addNewScheduleItem").modal();
+				})
+			})
+		</script>
+	</wicket:remove>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="Desktop.css">
+			</wicket:link>
+			<div style="min-height: 450px;"></div>
+			<div align="center">
+				<table>
+					<tr>
+						<td width="100" height="100" wicket:id="menuItem1">
+							<a href="AboutMe.html" class="btn btn-primary desptopLink" wicket:id="me">我</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem2">
+							<a href="ManageCollege.html" class="btn btn-primary desptopLink" wicket:id="manageCollege">管理学院</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem3">
+							<a href="ManageParameter.html" class="btn btn-primary desptopLink" wicket:id="manageParameter">系统参数</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem4">
+							<a href="#" class="btn btn-primary desptopLink" wicket:id="menuGroupLink" id="menuGroupLink1">初始化</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem5">
+							<a href="ManageEvent.html" class="btn btn-primary desptopLink" wicket:id="manageEvent">管理毕设</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem6">
+							<a href="#" class="btn btn-primary desptopLink" id="beginApplySubject" wicket:id="beginApplySubject">启动报题</a> 
+						</td>
+						<td width="100" height="100" wicket:id="menuItem7">
+							<a href="ManageSubject.html" class="btn btn-primary desptopLink" wicket:id="applySubject">我的题目</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem8">
+							<a href="ExamSubject.html" class="btn btn-primary desptopLink" wicket:id="examSubject">所有题目</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem9">
+							<a href="#" class="btn btn-primary desptopLink" id="beginSelectSubject" wicket:id="beginSelectSubject">启动选题</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem10">
+							<a href="SelectSubject.html" class="btn btn-primary desptopLink" wicket:id="selectSubject">选题</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem11">
+							<a href="ManageSubject.html" class="btn btn-primary desptopLink" wicket:id="studentApplySubject">学生报题</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem12">
+							<a href="MyGraduadeDesign.html" class="btn btn-primary desptopLink" wicket:id="myGraduadeDesign">我的毕业设计</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem13">
+							<a href="GuideGraduadeDesign.html" class="btn btn-primary desptopLink" wicket:id="guideGraduadeDesign">指导毕业设计</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem14">
+							<a href="ChangeSubject.html" class="btn btn-primary desptopLink" wicket:id="changeSubject">更换选题</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem15">
+							<a href="ManageChangeSubject.html" class="btn btn-primary desptopLink" wicket:id="manageChangeSubject">管理更换选题</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem16">
+							<a href="ArrangeReply.html" class="btn btn-primary desptopLink" wicket:id="arrangeReply">安排答辩</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem20">
+							<a href="#" class="btn btn-primary desptopLink" wicket:id="publicNotice">发布公告</a>
+						</td>
+						<td width="100" height="100" wicket:id="menuItem21">
+							<a href="About.html" class="btn btn-primary desptopLink" wicket:id="about">关于系统</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="modal fade" id="moreMenu1" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document" style="width: 490px;">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">初始化</h4>
+						</div>
+						<div class="modal-body">
+							<a href="ManageTeacher.html" class="btn btn-primary desptopLink" wicket:id="manageTeacher">教师</a> 
+							<a href="ManageStudent.html" class="btn btn-primary desptopLink" wicket:id="manageStudent">学生</a>
+							<a href="ManageTeachAndResearchOffice.html" class="btn btn-primary desptopLink" wicket:id="manageTeachAndResearchOffice">教研室</a> 
+							<a href="ManageSpecialty.html" class="btn btn-primary desptopLink" wicket:id="manageClazz">专业、班级</a> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+		<script type="text/javascript">
+			$(function(){
+				$('#menuGroupLink1').click(function(){
+					$('#moreMenu1').modal();
+				});
+				
+				$('#beginApplySubject').click(function(){
+					return confirm("确认要启动报题吗？");
+				});
+				
+				$('#beginSelectSubject').click(function(){
+					return confirm("确定要进入选题吗？进入选题后将关闭报题和审题的全部权限。");
+				});
+			});
+		</script>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+
+</body>
+</html>

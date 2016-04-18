@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div class="panel panel-default" style="margin: 10px;">
+				<div class="panel-heading">
+					<h2 style="font-weight: bold;">教研室管理</h2>
+				</div>
+				<div class="panel-body" style="padding: 30px;">
+					<div>
+						<div style="float: right;">
+							<a href="#" class="btn btn-primary" id="addTeachAndResearchOffice" wicket:id="addTeachAndResearchOffice">添加教研室</a>
+						</div>
+						<div style="clear: both;"></div>
+					</div>
+					<hr>
+					<table>
+						<thead>
+							<tr>
+								<th>学院名称</th>
+								<th>教研室名称</th>
+								<th>编号</th>
+								<th>编辑</th>
+							</tr>
+						</thead>
+						<tbody wicket:id="teachAndResearchOfficeTab">
+							<tr wicket:id="teachAndResearchOfficeItem">
+								<td wicket:id="college.collegeName">计算机技术与应用系</td>
+								<td wicket:id="name">计算机教研室</td>
+								<td wicket:id="number">1</td>
+								<td wicket:id="operators">
+									<a href="#" class="edit" wicket:id="edit">修改</a> 
+									<a href="#" class="delete" wicket:id="delete">删除</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>	
+			<div class="modal fade" id="editTeachAndResearchOffice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">编辑教研室</h4>
+						</div>
+						<div class="modal-body">
+							<div wicket:id="errors"></div>
+							<form class="form-horizontal" wicket:id="editSpecialty">
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">名称</label>
+									<input type="text" class="form-control" wicket:id="name" />
+								</div>
+								<br>
+								<div class="input-group input-group-lg">
+									<label class="input-group-addon" id="sizing-addon1">编号</label>
+									<input type="text" class="form-control" wicket:id="number" />
+								</div>
+								<br>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">取消</button>
+							<a type="button" class="btn btn-primary" id="editTeachAndResearchOfficeSubmit"
+								wicket:id="editTeachAndResearchOfficeSubmit">保存</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+	<wicket:remove>
+		<script type="text/javascript">
+			$(function(){
+				$("#addTeachAndResearchOffice").click(function(){
+					$('#editTeachAndResearchOffice').modal();
+				});
+				
+				$(".edit").click(function(){
+					$('#editTeachAndResearchOffice').modal();
+				});
+				
+				$("#editSpecialtySubmit").click(function(){
+					$('#editTeachAndResearchOffice').modal('hide');
+				});
+				
+				$(".delete").click(function(){
+					confirm("你确定要删除所选项目吗？")
+				});
+			})
+		</script>
+	</wicket:remove>
+</body>
+</html>

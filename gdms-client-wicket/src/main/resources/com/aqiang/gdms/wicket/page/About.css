@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+.version {
+	line-height: 180%;
+	padding: 10px;
+}
+
+.versionNumber {
+	font-size: 18px;
+	font-family: 黑体;
+	font-weight: bold;
+	margin: 10px 0px;
+	font-weight: bold
+}
+
+.logTitle {
+	margin: 5px 0px;
+}
+
+.logItem {
+	margin-left: 20px;
+}
+
+.publishTime {
+	margin: 10px 0px;
+}

@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+/*
+标题样式
+*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+	background-color: navy;
+}
+
+.title {
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	font-size: 24px;
+	float: left;
+}
+
+.shopKeeperInfo_messages {
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	float: right;
+}
+
+.userInfo{
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	float: right;
+	padding: 0px 10px;
+	margin: 0px 1px;
+	cursor: pointer;	/*使鼠标变成小手 */
+	background-color: maroon;
+}
+
+.message {
+	color: white;
+	font-family: 黑体;
+	line-height: 50px;
+	float: right;
+	padding: 0px 10px;
+	margin: 0px 1px;
+	cursor: pointer;	/*使鼠标变成小手 */
+	background-color: maroon;
+}
+
+.content {
+	min-height: 560px;
+}
+
+/*
+页底样式
+*/
+footer {
+	height: 50px;
+}
+
+.pageButtom {
+	font-size: 15px;
+	line-height: 50px;
+	color: #666;
+}

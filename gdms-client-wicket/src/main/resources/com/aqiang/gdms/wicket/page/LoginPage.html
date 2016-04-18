@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>用户登录</title>
+<meta charset="utf-8">
+<wicket:head>
+	<wicket:link>
+		<link rel="stylesheet" type="text/css" href="LoginPage.css">
+	</wicket:link>
+</wicket:head>
+</head>
+<body>
+	<div class="body">
+		<div class="content">
+			<span wicket:id="errors"></span>
+			<form action="#" wicket:id="form">
+				<table>
+					<tr>
+						<td><label>用户名</label></td>
+						<td align="right"><input type="text" wicket:id="username">
+						</td>
+					</tr>
+					<tr>
+						<td><label>密 码</label></td>
+						<td align="right"><input type="password" wicket:id="password">
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td align="right"><a href="#" wicket:id="submit"
+							class="btn btn-default">登录</a></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

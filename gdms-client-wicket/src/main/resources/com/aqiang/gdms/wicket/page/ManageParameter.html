@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<br>
+			<div align="center">
+				<div class="panel panel-primary" style=" width: 600px;" align="left">
+					<div class="panel-heading"><h4>系统参数</h4></div>
+					<div class="panel-body" style="margin: 10px;">
+						<div wicket:id="errors"></div>
+						<form wicket:id="form">
+							<div class="input-group input-group-lg">
+								<label class="input-group-addon" id="sizing-addon1">存放文件根目录</label>
+								<input type="text" class="form-control" wicket:id="fileRootDir" />
+							</div>
+							<br> 
+							<div align="right">
+								<a href="#" class="btn btn-primary" wicket:id="submit">提交</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+</body>
+</html>

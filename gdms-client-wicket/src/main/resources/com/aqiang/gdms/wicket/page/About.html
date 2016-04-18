@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+				<link rel="stylesheet" type="text/css" href="About.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div class="panel panel-default"
+				style="padding: 30px; margin: 10px auto; width: 600px;">
+				<div class="version">
+					<div class="versionNumber">版本：0.0.9</div>
+					<div class="versionLog">
+						<div class="logTitle">更新日志：</div>
+						<div class="logItem">1: 学生权限下，新增我的毕设按钮，在选题结束后出现。</div>
+						<div class="logItem">2: 教师权限下，新增我的毕设按钮，在选题结束后出现。</div>
+					</div>
+					<div class="publishTime">2016-01-03</div>
+				</div>
+				<div class="version">
+					<div class="versionNumber">版本：0.0.8</div>
+					<div class="versionLog">
+						<div class="logTitle">更新日志：</div>
+						<div class="logItem">1: 新增学生报题，学生可以根据自己的个人情况填报，自拟题目，公司题目或者硕导题目。</div>
+						<div class="logItem">2: 教师报题，默认为学校题目，且不可修改。</div>
+						<div class="logItem">3: 教学干事端，新增完成选题操作，点击完成选题后，学生和老师都将无法继续选题，同时在教学干事端出现下载学生选题汇总表链接，点击可下载本学院学生选题汇总表。</div>
+						<div class="logItem">4: 去掉之前旧版本中权限机制，改用新版权限机制。</div>
+						<div class="logItem">5: 用户账号管理检查用户名冲突问题。</div>
+					</div>
+					<div class="publishTime">2015-12-27</div>
+				</div>
+				<div class="version">
+					<div class="versionNumber">版本：0.0.7</div>
+					<div class="versionLog">
+						<div class="logTitle">更新日志：</div>
+						<div class="logItem">1: 修复附件二中教师职称bug。</div>
+					</div>
+					<div class="publishTime">2015-12-11</div>
+				</div>
+				<div class="version">
+					<div class="versionNumber">版本：0.0.6</div>
+					<div class="versionLog">
+						<div class="logTitle">更新日志：</div>
+						<div class="logItem">1: 细化教师个人信息版面，新增教师职称，研究领域栏位。</div>
+						<div class="logItem">2: 细化学生个人信息版面，新增学生学号，喜欢领域栏位。</div>
+						<div class="logItem">3: 教学干事下载所有课题的压缩包中添加了附件二。</div>
+						<div class="logItem">4: 新增版本更新日志版面。</div>
+						<div class="logItem">5: 教学干事界面新增启动选题功能，启动选题后将关闭报题的所有权限，同时启动选题功能。</div>
+						<div class="logItem">6: 学生界面新增选题按钮（启动选题后可见）。</div>
+						<div class="logItem">7: 教师角色中管理我的课题中，新增查看学生选题情况，和反向选择功能。</div>
+					</div>
+					<div class="publishTime">2015-12-10</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+	<wicket:remove>
+		<script type="text/javascript">
+			$(function() {
+				$('#modefyPassword').click(function() {
+					$('#modefyPasswordPanel').modal();
+				})
+			})
+		</script>
+	</wicket:remove>
+</body>
+</html>

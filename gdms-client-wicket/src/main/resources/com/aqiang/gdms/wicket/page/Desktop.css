@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+.desptopLink {
+	width: 90px;
+	height: 90px;
+	margin: 10px;
+}
+
+.desptopLink-min {
+	width: 42px;
+	height: 42px;
+	margin: 1px;
+	float: left;
+}
+
+.desptopLink-grop {
+}

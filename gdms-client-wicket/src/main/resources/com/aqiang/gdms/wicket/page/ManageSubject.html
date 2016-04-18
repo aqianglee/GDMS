@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<wicket:remove>
+	<link rel="stylesheet" type="text/css" href="BorderPage.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</wicket:remove>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages"></div>
+		<div style="clear: both;"></div>
+	</header>
+	<div>
+		<wicket:extend>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div class="panel panel-default" style="padding: 30px; margin: 10px;">
+				<div>
+					<div style="float: left;">
+						<h2 style="font-weight: bold;">我的课题</h2>
+					</div>
+					<div style="float: right; margin-top: 20px;">
+						<a href="EditSubject.html" class="btn btn-primary" wicket:id="addSubject">添加课题</a>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<hr>
+				<table id="table">
+					<thead>
+						<tr>
+							<th width="400">选题方向</th>
+							<th>学生选题情况</th>
+							<th>查看详情</th>
+							<th>下载文件</th>
+							<th>编辑</th>
+						</tr>
+					</thead>
+					<tbody wicket:id="subjectTab">
+						<tr wicket:id="subjectItem">
+							<td wicket:id="topicChoosingWay" width="500">信息技术方向-基于敏捷软件开发方法实现的校园生活超市系统</td>
+							<td><a href="#" class="showSelectedStudents" wicket:id="showSelectedStudents">学生选择情况</a></td>
+							<td><a href="#" wicket:id="showDetails">查看详情</a></td>
+							<td><a href="#" wicket:id="downloadFile">下载文件</a></td>
+							<td wicket:id="operators">
+								<a href="#" class="edit" wicket:id="edit">修改</a> 
+								<a href="#" class="delete" wicket:id="delete">删除</a>
+							</td>
+						</tr>
+						<wicket:remove>
+							
+						</wicket:remove>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal fade" id="selectedStudents" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document" style="width: 1000px;">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">学生选择情况</h4>
+						</div>
+						<div class="modal-body">
+							<table>
+								<thead>
+									<tr>
+										<th>姓名</th>
+										<th>学号</th>
+										<th>性别</th>
+										<th>专业、班级</th>
+										<th>手机</th>
+										<th>邮箱</th>
+										<th>喜欢领域</th>
+									</tr>
+								</thead>
+								<tbody wicket:id="selectedStudentsTab">
+									<tr wicket:id="selectedStudents">
+										<td wicket:id="compellation">李志强</td>
+										<td wicket:id="number">1200802022</td>
+										<td wicket:id="gender">男</td>
+										<td wicket:id="specialty.name">计算机科学与技术2012级</td>
+										<td wicket:id="phone">12345678900</td>
+										<td wicket:id="email">695182311@qq.com</td>
+										<td wicket:id="likeArea">web 开发</td>
+										<td><a href="#" wicket:id="confirm"><span wicket:id="confirmed">选定</span></a></td>
+									</tr>
+									<wicket:remove>
+										<tr>
+											<td>陈大文</td>
+											<td>1200000001</td>
+											<td>男</td>
+											<td>计算机科学与技术2012级</td>
+											<td>12345457377</td>
+											<td>938982348@qq.com</td>
+											<td>云计算</td>
+											<td><a href="#">选定</a></td>
+										</tr>
+									</wicket:remove>
+								</tbody>
+							</table>
+						</div>
+						<div class="modal-footer">
+							<button id="closeTeacherDetails" type="button"
+								class="btn btn-default" data-dismiss="modal">关闭</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+	<wicket:remove>
+		<script type="text/javascript">
+			$(function(){
+				$(".delete").click(function(){
+					confirm("你确定要删除所选项目吗？");
+				});
+				
+				$(".showSelectedStudents").click(function(){
+					$("#selectedStudents").modal();
+				});
+			})
+		</script>
+	</wicket:remove>
+</body>
+</html>

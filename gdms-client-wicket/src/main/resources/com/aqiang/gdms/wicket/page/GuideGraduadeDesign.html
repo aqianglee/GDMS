@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>毕业设计管理系统 0.0.8</title>
+<wicket:head>
+	<wicket:link>
+		<link rel="stylesheet" type="text/css" href="BorderPage.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	</wicket:link>
+</wicket:head>
+</head>
+<body>
+	<header>
+		<div class="title">青海大学毕业设计管理系统</div>
+		<div class="shopKeeperInfo_messages">
+			<a class="btn btn-primary" type="button" wicket:id="showMessage">
+				Messages <span class="badge" wicket:id="messageCount">4</span>
+			</a> 
+			<a class="btn btn-primary" type="button" wicket:id="logout">退出</a>
+		</div>
+		<div style="clear: both;"></div>
+	</header>
+	<div class="content">
+		<wicket:child>
+			<wicket:link>
+				<link rel="stylesheet" type="text/css" href="DefaultTable.css">
+			</wicket:link>
+			<div style="padding: 10px;">
+				<a href="Desktop.html" class="btn btn-primary" wicket:id="return">返 回</a>
+			</div>
+			<div class="panel panel-default" style="padding: 30px; margin: 10px;">
+				<div>
+					<div style="float: left;">
+						<h2 style="font-weight: bold;">毕设小组</h2>
+					</div>
+					<div style="float: right; margin-top: 20px;">
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+				<hr>
+				<table>
+					<thead>
+						<tr>
+							<th width="500">选题方向</th>
+							<th>详情</th>
+							<th>学生</th>
+						</tr>
+					</thead>
+					<tbody wicket:id="groupsTab">
+						<tr wicket:id="groupItem">
+							<td wicket:id="subject.topicChoosingWay">信息技术方向——基于敏捷软件开发方法实现的校园生活超市系统</td>
+							<td><a href="myGraduadeDesign.html" wicket:id="details">详情</a></td>
+							<td>
+								<span wicket:id="student">
+									<span wicket:id="compellation">李志强</span>
+								</span>
+								<wicket:remove>
+									<span>
+										<span>
+											李志强
+										</span>
+									</span>
+								</wicket:remove>
+							</td>
+						</tr>
+						<wicket:remove>
+							<tr>
+								<td>信息技术方向——基于敏捷软件开发方法实现的校园生活超市系统</td>
+								<td><a href="myGraduadeDesign.html">详情</a></td>
+								<td>
+									<span>
+										<span>
+											李志强
+										</span>
+									</span>
+									<span>
+										<span>
+											李志强
+										</span>
+									</span>
+								</td>
+							</tr>
+						</wicket:remove>
+					</tbody>
+				</table>
+			</div>
+		</wicket:child>
+		<script type="text/javascript">
+		</script>
+	</div>
+	<footer>
+		<div class="pageButtom" align="center">青海大学 &copy; 版权所有</div>
+	</footer>
+</body>
+</html>
